@@ -1,6 +1,6 @@
-Nome do Projeto: Backend Concessionária 🚗
+<img width="700" height="467" alt="image" src="https://github.com/user-attachments/assets/ccffe233-ba2f-40b5-a81a-27a17d9ec0fc" />Nome do Projeto: Backend Concessionária 🚗
 <div align="center">
-<img src="https://www.google.com/imgres?q=carro&imgurl=https%3A%2F%2Fcdn.motor1.com%2Fimages%2Fmgl%2FAkB8vL%2Fs3%2Ffiat-mobi-2023.jpg&imgrefurl=https%3A%2F%2Fmotor1.uol.com.br%2Ffeatures%2F597800%2F10-carros-mais-baratos-brasil%2F&docid=LoS2EKVursiSMM&tbnid=eIgWO9eMGeeh2M&vet=12ahUKEwj05brGy5qPAxVTJrkGHc3dAPsQM3oECCgQAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwj05brGy5qPAxVTJrkGHc3dAPsQM3oECCgQAA" alt="Logo do projeto ou ícone de carro" width="150">
+<img src="https://blog.deltafiat.com.br/wp-content/uploads/2023/08/carro-completo-700x467.jpeg" alt="Logo do projeto ou ícone de carro" width="150">
 </div>
 
 📝 Descrição do Projeto
