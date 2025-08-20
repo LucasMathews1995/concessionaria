@@ -5,21 +5,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_carros")
 public class Carro {
     @Id
-    @GeneratedValue(strategy =GenerationType.SEQUENCE)
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
     private long id;
 
 
     private String nome; 
      private Modelo modelo; 
     private int ano; 
-    private Double preco;
+    private double preco;
     private double desconto;
+
+     @ManyToOne
+    @JoinColumn(name = "marca_id")
     private Marca marca;
+    @ManyToOne
+    @JoinColumn(name = "concessionaria_id")
     private Concessionaria concessionaria;
 
 

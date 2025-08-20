@@ -16,12 +16,13 @@ import jakarta.persistence.Table;
 public class Concessionaria {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id; 
      private String nome;
     private String cidade;
     private String estado;
     private Double saldo;
+
     @OneToMany(mappedBy= "concessionaria",cascade = CascadeType.ALL,orphanRemoval = true) 
     private List<Carro> carros;
 
@@ -29,6 +30,14 @@ public class Concessionaria {
 
 
     
+    public Concessionaria() {
+    }
+
+
+
+
+
+
     public Concessionaria(String nome, String cidade, String estado, Double saldo) {
         this.nome = nome;
         this.cidade = cidade;

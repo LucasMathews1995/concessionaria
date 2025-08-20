@@ -16,12 +16,16 @@ import jakarta.persistence.Table;
 public class Marca {
     
 @Id
-@GeneratedValue(strategy = GenerationType.SEQUENCE)
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String nome;
 
     private String nacionalidade;
+
+    private String categoria;
+
+
     @OneToMany(mappedBy = "marca", orphanRemoval = true,cascade = CascadeType.ALL)
     private List<Carro> carros;
 
@@ -29,9 +33,15 @@ public class Marca {
    
 
 
-    public Marca (String nome, String nacionalidade){
+    public Marca() {
+    }
+
+
+
+    public Marca (String nome, String nacionalidade, String categoria){
         this.nome= nome;
         this.nacionalidade = nacionalidade;
+        this.categoria = categoria;
        
         this.carros = new ArrayList<>();
 
@@ -65,6 +75,15 @@ public class Marca {
 
     
 
+  public String getCategoria() {
+    return categoria;
+  }
+
+
+
+  public void setCategoria(String categoria) {
+    this.categoria = categoria;
+  }
 
 
     public long getId() {
@@ -97,6 +116,8 @@ public class Marca {
         this.carros.remove(carro);
         carro.setMarca(null);
     }
+
+
 
 
     
