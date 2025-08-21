@@ -1,6 +1,8 @@
 package com.concessionaria.lucasconcessionaria.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,12 +23,15 @@ public class Carro {
     private int ano; 
     private double preco;
     private double desconto;
+    private String cor;
 
      @ManyToOne
     @JoinColumn(name = "marca_id")
+    @JsonBackReference
     private Marca marca;
     @ManyToOne
     @JoinColumn(name = "concessionaria_id")
+    @JsonBackReference
     private Concessionaria concessionaria;
 
 
@@ -34,7 +39,12 @@ public class Carro {
 
 
     
-    public Carro(String nome, Modelo modelo, int ano, Double preco, double desconto,Marca marca,Concessionaria concessionaria) {
+    public Carro() {
+    }
+
+
+
+    public Carro(String nome, Modelo modelo, int ano, Double preco, double desconto,String cor,Marca marca,Concessionaria concessionaria) {
         this.nome = nome;
         this.modelo = modelo;
         this.ano = ano;
@@ -46,6 +56,24 @@ public class Carro {
 
 
     
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+
+
+    public String getCor() {
+        return cor;
+    }
+
+
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+
+
     public long getId() {
         return id;
     }

@@ -3,6 +3,8 @@ package com.concessionaria.lucasconcessionaria.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,6 +26,7 @@ public class Concessionaria {
     private Double saldo;
 
     @OneToMany(mappedBy= "concessionaria",cascade = CascadeType.ALL,orphanRemoval = true) 
+    @JsonManagedReference
     private List<Carro> carros;
 
 
