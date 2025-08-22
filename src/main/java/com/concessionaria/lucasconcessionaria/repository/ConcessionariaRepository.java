@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.concessionaria.lucasconcessionaria.model.Concessionaria;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -14,4 +15,6 @@ public interface ConcessionariaRepository extends JpaRepository<Concessionaria,L
 
 
     public Optional<Concessionaria> findByNome(String nome);
+
+    public Optional<List<Concessionaria>> findAllByNome(String nome);
 }

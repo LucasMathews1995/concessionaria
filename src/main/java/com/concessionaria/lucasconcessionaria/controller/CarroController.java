@@ -19,7 +19,6 @@ import com.concessionaria.lucasconcessionaria.model.Carro;
 import com.concessionaria.lucasconcessionaria.service.CarroService;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @RestController
 @RequestMapping("api/veiculos")
 public class CarroController {
@@ -88,14 +87,51 @@ public class CarroController {
         }
     }
 
-   @GetMapping("/buscar")
-   public ResponseEntity<List<Carro>> buscarPorNomeAndAno(@RequestParam(required = false)String nome,@RequestParam(required=false)String marca, @RequestParam(required = false) Integer ano){
-        try{
-           List<Carro> carro =  service.listarPorNomeAndMarcaAndAno(marca,nome  ,ano);
-            return ResponseEntity.ok().body(carro);
-        }catch(CarroNotFoundException e ){
+    @GetMapping("/buscar")
+    public ResponseEntity<List<Carro>> buscarPorNomeOrMarcaOrAno(@RequestParam(required = false) String nome,
+            @RequestParam(required = false) String marca, @RequestParam(required = false) Integer ano) {
+        try {
+            if (ano != null) {
+                List<Carro> carro = service.listarPorNomeOrMarcaOrAno(marca, nome, ano);
+                return ResponseEntity.ok().body(carro);
+            } else {
+                List<Carro> carro = service.listarPorNomeOrMarcaOrAno(marca, nome, null);
+                return ResponseEntity.ok().body(carro);
+            }
+
+        } catch (CarroNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-   }
-    
+    }
+@PostMapping("/vender")
+    public ResponseEntity<Carro> venderCarro(@RequestBody CarroDTO carro){
+
+        try {
+
+        var carro2 =    service.venderCarro(carro);
+
+      return  ResponseEntity.ok().body(carro2);
+            
+        } catch (CarroNotFoundException e) {
+            return null;
+        }
+
+
+    }
+
+@PostMapping("/comprar")
+    public ResponseEntity<Carro> comprarCarro(@RequestBody CarroDTO carro){
+
+
+        try{
+           Carro c= service.comprarCarro(carro);
+            return ResponseEntity.ok().body(c);
+
+        } catch(CarroNotFoundException e ){
+         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+
+
+        }
+    }
+
 }

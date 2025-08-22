@@ -12,7 +12,9 @@ import java.util.List;
 public interface CarroRepository extends JpaRepository<Carro,Long> {
 
     public List<Carro> findByNome(String nome);
-    public List<Carro> findByNomeAndAno(String nome, int ano);
-  public List<Carro> findByNomeOrAno(String nome, int ano);
+    public List<Carro> findByNomeAndAno(String nome, Integer ano);
+    public List<Carro> findByNomeAndCor(String nome, String cor);
+    public List<Carro> findByNomeAndAnoAndCor(String nome, Integer ano , String cor);
+ 
 
 }
