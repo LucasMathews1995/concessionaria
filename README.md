@@ -1,7 +1,7 @@
+<img width="700" height="467" alt="image" src="https://github.com/user-attachments/assets/ccffe233-ba2f-40b5-a81a-27a17d9ec0fc" />
+<br></br>
 Nome do Projeto: Backend Concessionária 🚗
-<div align="center">
-<img src="URL_DA_IMAGEM_A_LOGO_DO_PROJETO" alt="Logo do projeto ou ícone de carro" width="150">
-</div>
+
 
 📝 Descrição do Projeto
 Este é o backend de uma aplicação de gestão de uma concessionária de veículos. O sistema gerencia o estoque de veículos, informações de clientes, vendas, manutenções e agendamentos. Ele fornece uma API RESTful para que o frontend possa interagir com o banco de dados de forma segura e eficiente.
